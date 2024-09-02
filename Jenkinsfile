@@ -1,31 +1,30 @@
-pipeline{
+pipeline {
     agent any
-    tools {
-        nodejs 'nodejs'
+    tools { 
+        nodejs "NodeJS 22.6.0"
+        gradle "Gradle 8.10"
     }
-    stages{
-        stage("Clone Repository"){
-            steps{
-                git branch:'master', url: 'https://github.com/Gerrykiptoo/gallery.git'
+    stages {
+        stage('Clone Repository') {
+            steps { 
+                git 'https://github.com/Gerrykiptoo/gallery'
             }
         }
-        stage("build"){
-            steps{
-                sh 'npm install'
-                sh 'npm run'
+        stage('Build Project') {
+            steps {
+                dir('project-directory') { // Change to the subdirectory containing the Gradle build files
+                    sh 'gradle build'
+                }
             }
         }
-        stage("Test"){
-            steps{
-                sh  './jenkins/scripts/test.sh'
+        stage('Run Tests') {
+            steps {
+                dir('project-directory') {
+                    sh 'npm install mocha'
+                    sh 'npm test'
+                    sh 'gradle test'
+                }
             }
         }
-        stage("Deploy code"){
-            step{
-                sh './jenkins/scripts/deliver.sh' 
-                input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                 sh './jenkins/scripts/kill.sh'
-            }
-        }                                
     }
 }
