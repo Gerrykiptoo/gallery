@@ -7,7 +7,7 @@ pipeline {
         SLACK_WEBHOOK_URL = 'your-slack-webhook-url'  // Ensure this is the actual Slack webhook URL
         RENDER_SERVICE_ID = 'your-render-service-id'  // Ensure this is the correct Render service ID
         RENDER_API_KEY = 'your-render-api-key'  // Ensure this is the correct Render API key
-        EMAIL_RECEPIENT = 'your-email@example.com'  // Replace with the actual email recipient
+        EMAIL_RECEPIENT = 'gerrykiptoo@gmail.com'  // Replace with the actual email recipient
         EMAIL_SUBJECT_SUCCESS = 'Build SUCCESS'
         EMAIL_SUBJECT_FAILURE = 'Build FAILURE'
         EMAIL_BODY = 'The Jenkins build has completed with status: ${currentBuild.currentResult}'
