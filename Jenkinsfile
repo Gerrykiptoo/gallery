@@ -7,8 +7,6 @@ pipeline {
         SLACK_WEBHOOK_URL = 'your-slack-webhook-url'
         RENDER_SERVICE_ID = 'your-render-service-id'
         RENDER_API_KEY = 'your-render-api-key'
-        // HEROKU_APP_NAME = 'your-heroku-app-name'
-        // HEROKU_API_KEY = credentials('HEROKU_API_KEY') 
         EMAIL_RECEPIENT = 'your-email@example.com'
         EMAIL_SUBJECT_SUCCESS = 'Build SUCCESS'
         EMAIL_SUBJECT_FAILURE = 'Build FAILURE'
