@@ -11,23 +11,17 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                dir('.') {  // Root directory, where your package.json is located
-                    sh 'npm install'
-                }
+               sh 'npm install'
             }
         }
         stage('Build Project') {
             steps {
-                dir('.') {  // Root directory, where your package.json is located
-                    sh 'npm run build'
-                }
+                sh 'npm run build'
             }
         }
         stage('Run Tests') {
             steps {
-                dir('.') {  // Root directory, where your package.json is located
-                    sh 'npm test'
-                }
+                sh 'npm test'
             }
         }
     }
