@@ -40,14 +40,7 @@ pipeline {
                 '''
             }
         }
-        // stage('Deploy to Heroku') {
-        //     steps {
-        //         sh '''
-        //         echo "Deploying to Heroku..."
-        //         git push https://heroku:${HEROKU_API_KEY}@git.heroku.com/${HEROKU_APP_NAME}.git HEAD:main
-        //         '''
-        //     }
-        // }
+        
         stage('Slack Notification') {
             steps {
                 slackSend(channel: '#your-slack-channel', color: 'good', message: "Build Successful: ${env.JOB_NAME} - ${env.BUILD_NUMBER}")
