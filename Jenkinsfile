@@ -17,7 +17,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/Gerrykiptoo/gallery'
+                git branch: 'master', url: 'https://github.com/Gerrykiptoo/gallery'
             }
         }
         stage('Install Dependencies') {
