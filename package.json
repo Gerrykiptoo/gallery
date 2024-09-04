@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "mocha --exit"
+    "test": "mocha --exit",
+    "build": "echo 'No build step necessary'"
   },
   "keywords": [],
   "author": "",
