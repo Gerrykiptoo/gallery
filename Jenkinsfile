@@ -41,7 +41,7 @@ pipeline {
         
         stage('Slack Notification') {
             steps {
-                slackSend(channel: '#your-slack-channel', color: 'good', message: "Build Successful: ${env.JOB_NAME} - ${env.BUILD_NUMBER}")
+                slackSend(channel: '#jenkins', color: 'good', message: "Build Successful: ${env.JOB_NAME} - ${env.BUILD_NUMBER}")
                 // Ensure Slack plugin is properly configured in Jenkins and the channel exists
             }
         }
